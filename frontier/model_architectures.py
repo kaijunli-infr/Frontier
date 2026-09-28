@@ -9,8 +9,8 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any, Callable, Iterable, Literal, cast
 
-from frontier.operators.spec import TensorParallelMode
-from frontier.types import ClusterType
+from frontier.operators.families import get_operator_family
+from frontier.types import ClusterType, LayerKind, TensorParallelMode
 
 
 logger = logging.getLogger(__name__)
@@ -36,14 +36,6 @@ class ResidualAddPolicy(Enum):
 
     STANDARD = "standard"
     FFN_RESIDUAL_ONLY = "ffn_residual_only"
-
-
-class LayerKind(Enum):
-    """Typed FFN domain exposed by a model architecture profile."""
-
-    DENSE = "dense"
-    ROUTED = "routed"
-    SHARED = "shared"
 
 
 class LayerDimensionSource(Enum):
@@ -481,11 +473,9 @@ class ModelArchitectureProfile:
                 f"model architecture profile {self.profile_id!r} declares duplicate family ownership"
             )
         try:
-            from frontier.operators.families import get_operator_family
-
             for family_id in family_ids:
                 get_operator_family(family_id)
-        except (ImportError, TypeError, ValueError) as exc:
+        except (TypeError, ValueError) as exc:
             raise ValueError(
                 f"model architecture profile {self.profile_id!r} references unknown operator family"
             ) from exc

@@ -7,7 +7,7 @@ from frontier.attention.families import (
     DSA_ATTENTION_FAMILY,
     LATENT_MLA_ATTENTION_FAMILY,
 )
-from frontier.config.parallel_semantics import (
+from frontier.types.parallel_semantics import (
     resolve_shared_expert_tensor_parallel_mode,
     resolve_shared_expert_tensor_parallel_size,
 )

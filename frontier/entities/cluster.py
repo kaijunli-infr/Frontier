@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Optional
 
 from frontier.config import BaseRequestGeneratorConfig, ClusterConfig, MetricsConfig
-from frontier.config.parallel_semantics import (
+from frontier.types.parallel_semantics import (
     FrontierParallelismMapping,
     build_collective_sim_layout,
     resolve_collective_sim_physical_topology,

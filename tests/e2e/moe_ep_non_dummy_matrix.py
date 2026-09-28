@@ -377,7 +377,7 @@ def _case_cards(
 def validate_case_parallel_semantics(case: MatrixCase) -> None:
     """Apply the same shared-domain mapping contract used by Frontier/vLLM."""
 
-    from frontier.config.parallel_semantics import (
+    from frontier.types.parallel_semantics import (
         FrontierParallelismMapping,
         validate_frontier_shared_parallel_domains,
     )

@@ -7,6 +7,7 @@ from .event_type import EventType
 from .execution_time_predictor_type import ExecutionTimePredictorType
 from .cluster_scheduler_type import ClusterSchedulerType
 from .kv_cache_transfer_type import KVCacheTransferType
+from .layer_kind import LayerKind
 from .m2n_transfer_type import M2NTransferType
 from .measurement_type import MeasurementType
 from .node_sku_type import NodeSKUType
@@ -15,6 +16,7 @@ from .replica_scheduler_type import ReplicaSchedulerType
 from .request_generator_type import RequestGeneratorType
 from .request_interval_generator_type import RequestIntervalGeneratorType
 from .request_length_generator_type import RequestLengthGeneratorType
+from .tensor_parallel_mode import TensorParallelMode
 
 __all__ = [
     EventType,
@@ -34,4 +36,6 @@ __all__ = [
     ActivationType,
     BaseIntEnum,
     ClusterType,
+    LayerKind,
+    TensorParallelMode,
 ]

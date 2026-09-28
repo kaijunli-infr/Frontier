@@ -13,7 +13,7 @@ from frontier.attention.model_binding import bind_attention_family
 from frontier.attention.ops import AttentionOperatorRole
 from frontier.config import get_quantization_manager
 from frontier.config.model_config import BaseModelConfig
-from frontier.config.parallel_semantics import (
+from frontier.types.parallel_semantics import (
     resolve_shared_expert_tensor_parallel_size,
 )
 from frontier.config.precision_type import PrecisionType

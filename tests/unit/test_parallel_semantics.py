@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from frontier.config.parallel_semantics import (
+from frontier.types.parallel_semantics import (
     build_collective_sim_layout,
     resolve_frontier_parallelism_mapping,
     validate_frontier_shared_parallel_domains,

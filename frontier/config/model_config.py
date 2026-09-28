@@ -14,6 +14,7 @@ from frontier.attention.ops import AttentionMemoryLayout
 from frontier.config.base_fixed_config import BaseFixedConfig
 from frontier.config.precision_type import PrecisionType
 from frontier.logger import init_logger
+from frontier import model_architectures
 from frontier.model_architectures import (
     MODEL_ARCHITECTURE_REGISTRY,
     get_model_architecture_profile,
@@ -609,10 +610,9 @@ class BaseModelConfig(BaseFixedConfig):
         if self._moe_layer_ids_cache is not None:
             return self._moe_layer_ids_cache
 
-        from frontier.model_architectures import parse_moe_layer_ids
-
+        # Resolved through the module so the canonical parser stays patchable.
         self._moe_layer_ids_cache = list(
-            parse_moe_layer_ids(self.moe_layers_enum, self.num_layers)
+            model_architectures.parse_moe_layer_ids(self.moe_layers_enum, self.num_layers)
         )
         return self._moe_layer_ids_cache
 

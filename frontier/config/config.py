@@ -37,7 +37,7 @@ if TYPE_CHECKING:
 
 from frontier.config.model_config import BaseModelConfig
 from frontier.config.node_sku_config import BaseNodeSKUConfig
-from frontier.config.parallel_semantics import (
+from frontier.types.parallel_semantics import (
     FrontierParallelismMapping,
     resolve_collective_sim_physical_topology,
     validate_frontier_shared_parallel_domains,

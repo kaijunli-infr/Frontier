@@ -4,6 +4,8 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any, Callable, ClassVar
 
+from frontier.types.tensor_parallel_mode import TensorParallelMode  # noqa: F401 - re-exported
+
 
 class ResourceClass(Enum):
     """High-level resource bucket for a physical operator."""
@@ -50,15 +52,6 @@ class ProjectionOwnership(Enum):
     OUTSIDE_ATTENTION = "outside_attention"
     INSIDE_ATTENTION_PHYSICAL_SCOPE = "inside_attention_physical_scope"
     NOT_PROJECTION = "not_projection"
-
-
-class TensorParallelMode(Enum):
-    """How a predictor resolves the tensor-parallel key for an operator."""
-
-    REPLICATED = "replicated"
-    ATTENTION_TP = "attention_tp"
-    FFN_TP = "ffn_tp"
-    MOE_TP = "moe_tp"
 
 
 class ZeroPayloadPolicy(Enum):

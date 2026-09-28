@@ -8,7 +8,7 @@ import pytest
 from frontier.config.config import ReplicaConfig
 from frontier.config.config import SimulationConfig
 from frontier.config.flat_dataclass import create_flat_dataclass
-from frontier.config.parallel_semantics import FrontierParallelismMapping
+from frontier.types.parallel_semantics import FrontierParallelismMapping
 
 
 def test_replica_config_exposes_canonical_attention_dp_name_only() -> None:

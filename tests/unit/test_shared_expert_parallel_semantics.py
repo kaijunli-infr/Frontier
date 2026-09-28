@@ -3,7 +3,7 @@ from __future__ import annotations
 from types import SimpleNamespace
 
 from frontier.config.model_config import BaseModelConfig
-from frontier.config.parallel_semantics import (
+from frontier.types.parallel_semantics import (
     resolve_shared_expert_tensor_parallel_size,
 )
 from frontier.execution_time_predictor.sklearn_disaggregation_execution_time_predictor import (

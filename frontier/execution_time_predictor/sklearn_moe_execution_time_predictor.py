@@ -73,7 +73,7 @@ from frontier.config import (
     BaseReplicaSchedulerConfig,
     get_quantization_manager,
 )
-from frontier.config.parallel_semantics import (
+from frontier.types.parallel_semantics import (
     resolve_shared_expert_tensor_parallel_size,
 )
 from frontier.types import ClusterType

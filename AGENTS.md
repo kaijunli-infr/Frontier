@@ -6,6 +6,7 @@
 
 | Date       | Summary of Changes |
 | ---------- | ------------------ |
+| 2026-09-28 | Moved `parallel_semantics`, `TensorParallelMode`, and `LayerKind` into the leaf `frontier/types/` package, made the quantization manager a lazy `frontier.config` export, and added the import-layering guard. |
 | 2026-09-28 | Added the checked-in golden matrix under `tests/golden_matrix/` as the refactor safety net. |
 | 2026-09-06 | Added the `FRONTIER_TMP_ROOT` and `FRONTIER_PDAF_REFERENCE_REPO_ROOT` overrides for developer-specific test-harness paths. |
 | 2026-09-05 | Added the authoritative vLLM parallel-semantics and Frontier lane-mapping contract. |
@@ -780,6 +781,10 @@ Start with:
 - `pytest tests/unit/test_pdd_public_surface_docs.py tests/unit/test_examples_pdd_scripts.py -q`
 - `bash tests/debug/e2e-level/monolith_mode/scripts/test_dense_tp2_pp2_dummy.sh`
 - `bash tests/debug/e2e-level/monolith_mode/scripts/test_moe_tp2_ep2_pp2_dummy.sh`
+
+### Import layering
+
+`frontier/types/` is the dependency-free leaf of the package: enums such as `ClusterType`, `TensorParallelMode`, and `LayerKind`, plus `frontier/types/parallel_semantics.py`. `frontier/operators/`, `frontier/attention/`, `frontier/moe_ep_workload.py`, and `frontier/model_architectures.py` sit directly above it and must not import `frontier.config` or any higher layer at module level. `frontier.config` exposes `QuantizationManager` and `get_quantization_manager` lazily because that module imports upward. `tests/unit/test_import_layering.py` enforces both rules and also imports every core module first in a fresh interpreter. `frontier/config/parallel_semantics.py` remains as a re-exporting facade for one release; new code imports from `frontier.types.parallel_semantics`.
 
 ### Golden matrix for refactors
 

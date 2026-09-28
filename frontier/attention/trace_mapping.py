@@ -1,11 +1,15 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from frontier.attention.ops import (
     AttentionFamilySpec,
     AttentionOperatorSpec,
     ProjectionOwnership,
 )
-from frontier.entities.execution_time import ExecutionTime
+
+if TYPE_CHECKING:  # annotation only; frontier.entities sits above frontier.attention
+    from frontier.entities.execution_time import ExecutionTime
 
 
 _MODEL_PROJECTION_EXECUTION_TIME_ATTRS = (
