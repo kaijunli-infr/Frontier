@@ -1,0 +1,592 @@
+{
+ "recorded_from": "4ab19644658b54c65606753d746bae3e7d2fd76b",
+ "digest_version": 1,
+ "scenario": {
+  "id": "co-location_online_moe_model_basic_chunked",
+  "script": "examples/architecture/co-location/online/moe_model_basic_online.sh",
+  "settings": {
+   "NUM_REQUESTS": "3",
+   "PREFILL_TOKENS": "80",
+   "DECODE_TOKENS": "6",
+   "QPS": "10"
+  },
+  "flags": [],
+  "expected_requests": 3
+ },
+ "artifacts": {
+  "frontier_ep_wave_lane_ledger.jsonl": {
+   "kind": "hash",
+   "rows": 512,
+   "sha256": "a31045fe9f32ca737909f94942ed7390c102dd12e96bae7fc9bf132d44c0e8f2"
+  },
+  "frontier_stage_batch_ledger.jsonl": {
+   "kind": "hash",
+   "rows": 8,
+   "sha256": "ca18cedd20c93abfe20a76b75755de0e1e7553c120cb7d79d504ec0e737084f3"
+  },
+  "op_precision_metadata.csv": {
+   "kind": "rows",
+   "rows": [
+    {
+     "operation": "add",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_decode",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_inter_norm",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_kv_cache_save",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_decode",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_decode_q_latent_proj",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_kv_cache_save",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_prefill",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_prefill_kv_up_proj",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_v_up_proj",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_post_proj",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_pre_proj",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_prefill",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_rope",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_wq_proj",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "emb",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "input_layernorm",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "lm_head_linear",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "mlp_act",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "mlp_down_proj",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "mlp_up_proj",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_gating",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_gating_linear",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_gating_routing_topk",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_grouped_gemm",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_shuffling",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "mtp_fusion_proj",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "post_attention_layernorm",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "share_expert_act",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "share_expert_down_proj",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "share_expert_up_proj",
+     "precision": "BF16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    }
+   ]
+  },
+  "request_metrics.csv": {
+   "kind": "rows",
+   "rows": [
+    {
+     "Request Id": "0",
+     "request_e2e_time": "3626.0000000000323",
+     "request_e2e_time_normalized": "604.3333333333387",
+     "request_execution_time": "3626.0000000000327",
+     "request_execution_time_normalized": "604.3333333333388",
+     "request_model_execution_time": "2567.0000000000005",
+     "request_model_execution_time_normalized": "427.8333333333334",
+     "request_preemption_time": "0.0",
+     "request_first_scheduling_delay": "0.0",
+     "request_execution_plus_preemption_time": "3626.0000000000327",
+     "request_execution_plus_preemption_time_normalized": "604.3333333333388",
+     "request_waiting_time_total": "0.0",
+     "request_waiting_time_prefill": "0.0",
+     "request_waiting_time_decode": "0.0",
+     "request_waiting_time_decode_attn": "0.0",
+     "request_waiting_time_decode_ffn": "0.0",
+     "request_hidden_waiting_time": "0.0",
+     "request_final_waiting_time": "0.0",
+     "request_hidden_service_time": "0.0",
+     "request_final_service_time": "3626.0000000000327",
+     "final_round_prefill_wait_ms": "0.0",
+     "final_round_decode_wait_ms": "0.0",
+     "final_round_prefill_service_ms": "0.0",
+     "late_hidden_prefill_wait_ms": "0.0",
+     "request_thinking_time": "0.0",
+     "request_tool_call_time": "0.0",
+     "prefill_e2e_time": "1035.9999999999957",
+     "prefill_execution_plus_preemption": "1035.9999999999957",
+     "prefill_execution_plus_preemption_per_token": "12.949999999999944",
+     "decode_e2e_time": "2590.0000000000373",
+     "decode_e2e_time_per_token": "431.6666666666729",
+     "decode_first_token_latency": "517.9999999999934",
+     "ttft": "1035.9999999999957",
+     "ttft_prefill_only": "1035.9999999999957",
+     "ttft_kv_transfer": "0.0",
+     "ttft_decode_first_token": "0.0",
+     "tpot": "518.0000000000075",
+     "tpot_computation": "518.0000000000075",
+     "tpot_transfer": "0.0",
+     "transfer_kv_cache": "0.0",
+     "transfer_m2n_total": "0.0",
+     "transfer_m2n_attn_to_ffn": "0.0",
+     "transfer_m2n_ffn_to_attn": "0.0",
+     "cluster_prefill_computation": "0.0",
+     "cluster_decode_attn_computation": "0.0",
+     "cluster_decode_ffn_computation": "0.0",
+     "cluster_decode_computation": "0.0",
+     "cluster_decode_attn_e2e_time": "0.0",
+     "cluster_decode_ffn_e2e_time": "0.0",
+     "request_inter_arrival_delay": "",
+     "request_num_tokens": "86",
+     "request_num_prefill_tokens": "80",
+     "request_num_decode_tokens": "6",
+     "request_pd_ratio": "13.333333333333334",
+     "request_num_restarts": "0",
+     "request_thinking_round_count": "0",
+     "request_session_id": "",
+     "request_cohort": "",
+     "request_sj2q_pen_qshort_entries_total": "0",
+     "request_sj2q_pen_qshort_long_history_entries_total": "0",
+     "request_sj2q_pen_qlong_entries_total": "0",
+     "request_sj2q_pen_long_history_to_qshort_reentry_count": "0",
+     "request_sj2q_pen_first_long_history_round_number": "0",
+     "request_total_preemption_count": "0",
+     "request_prefill_preemption_count": "0",
+     "request_decode_preemption_count": "0",
+     "request_decode_attn_preemption_count": "0",
+     "request_hidden_preemption_count": "0",
+     "request_final_preemption_count": "0",
+     "request_decode_tokens_at_preemption_all": "",
+     "request_decode_attn_tokens_at_preemption_all": "",
+     "request_decode_tokens_at_preemption_mean": "0",
+     "request_decode_tokens_at_preemption_max": "0",
+     "request_decode_tokens_at_preemption_min": "0",
+     "request_spec_total_iterations": "0",
+     "request_spec_accepted_drafts": "0",
+     "request_spec_rejected_drafts": "0",
+     "request_spec_committed_tokens": "0",
+     "request_spec_acceptance_ratio": "0.0",
+     "request_spec_committed_per_iteration": "0.0"
+    },
+    {
+     "Request Id": "1",
+     "request_e2e_time": "4141.467116095766",
+     "request_e2e_time_normalized": "690.2445193492945",
+     "request_execution_time": "3626.000000000041",
+     "request_execution_time_normalized": "604.3333333333402",
+     "request_model_execution_time": "2311.0000000000005",
+     "request_model_execution_time_normalized": "385.1666666666667",
+     "request_preemption_time": "0.0",
+     "request_first_scheduling_delay": "515.4671160957257",
+     "request_execution_plus_preemption_time": "3626.000000000041",
+     "request_execution_plus_preemption_time_normalized": "604.3333333333402",
+     "request_waiting_time_total": "515.4671160957257",
+     "request_waiting_time_prefill": "0.0",
+     "request_waiting_time_decode": "0.0",
+     "request_waiting_time_decode_attn": "0.0",
+     "request_waiting_time_decode_ffn": "0.0",
+     "request_hidden_waiting_time": "0.0",
+     "request_final_waiting_time": "515.4671160957257",
+     "request_hidden_service_time": "0.0",
+     "request_final_service_time": "3626.000000000041",
+     "final_round_prefill_wait_ms": "0.0",
+     "final_round_decode_wait_ms": "0.0",
+     "final_round_prefill_service_ms": "0.0",
+     "late_hidden_prefill_wait_ms": "0.0",
+     "request_thinking_time": "0.0",
+     "request_tool_call_time": "0.0",
+     "prefill_e2e_time": "1551.467116095715",
+     "prefill_execution_plus_preemption": "1035.9999999999893",
+     "prefill_execution_plus_preemption_per_token": "12.949999999999868",
+     "decode_e2e_time": "2590.0000000000514",
+     "decode_e2e_time_per_token": "431.66666666667527",
+     "decode_first_token_latency": "518.0000000000002",
+     "ttft": "1551.467116095715",
+     "ttft_prefill_only": "1035.9999999999893",
+     "ttft_kv_transfer": "0.0",
+     "ttft_decode_first_token": "515.4671160957256",
+     "tpot": "518.0000000000102",
+     "tpot_computation": "518.0000000000102",
+     "tpot_transfer": "0.0",
+     "transfer_kv_cache": "0.0",
+     "transfer_m2n_total": "0.0",
+     "transfer_m2n_attn_to_ffn": "0.0",
+     "transfer_m2n_ffn_to_attn": "0.0",
+     "cluster_prefill_computation": "0.0",
+     "cluster_decode_attn_computation": "0.0",
+     "cluster_decode_ffn_computation": "0.0",
+     "cluster_decode_computation": "0.0",
+     "cluster_decode_attn_e2e_time": "0.0",
+     "cluster_decode_ffn_e2e_time": "0.0",
+     "request_inter_arrival_delay": "0.0025328839042738915",
+     "request_num_tokens": "86",
+     "request_num_prefill_tokens": "80",
+     "request_num_decode_tokens": "6",
+     "request_pd_ratio": "13.333333333333334",
+     "request_num_restarts": "0",
+     "request_thinking_round_count": "0",
+     "request_session_id": "",
+     "request_cohort": "",
+     "request_sj2q_pen_qshort_entries_total": "0",
+     "request_sj2q_pen_qshort_long_history_entries_total": "0",
+     "request_sj2q_pen_qlong_entries_total": "0",
+     "request_sj2q_pen_long_history_to_qshort_reentry_count": "0",
+     "request_sj2q_pen_first_long_history_round_number": "0",
+     "request_total_preemption_count": "0",
+     "request_prefill_preemption_count": "0",
+     "request_decode_preemption_count": "0",
+     "request_decode_attn_preemption_count": "0",
+     "request_hidden_preemption_count": "0",
+     "request_final_preemption_count": "0",
+     "request_decode_tokens_at_preemption_all": "",
+     "request_decode_attn_tokens_at_preemption_all": "",
+     "request_decode_tokens_at_preemption_mean": "0",
+     "request_decode_tokens_at_preemption_max": "0",
+     "request_decode_tokens_at_preemption_min": "0",
+     "request_spec_total_iterations": "0",
+     "request_spec_accepted_drafts": "0",
+     "request_spec_rejected_drafts": "0",
+     "request_spec_committed_tokens": "0",
+     "request_spec_acceptance_ratio": "0.0",
+     "request_spec_committed_per_iteration": "0.0"
+    },
+    {
+     "Request Id": "2",
+     "request_e2e_time": "4109.30470968827",
+     "request_e2e_time_normalized": "684.8841182813783",
+     "request_execution_time": "3626.000000000041",
+     "request_execution_time_normalized": "604.3333333333402",
+     "request_model_execution_time": "2311.0000000000005",
+     "request_model_execution_time_normalized": "385.1666666666667",
+     "request_preemption_time": "0.0",
+     "request_first_scheduling_delay": "483.30470968822914",
+     "request_execution_plus_preemption_time": "3626.000000000041",
+     "request_execution_plus_preemption_time_normalized": "604.3333333333402",
+     "request_waiting_time_total": "483.30470968822914",
+     "request_waiting_time_prefill": "0.0",
+     "request_waiting_time_decode": "0.0",
+     "request_waiting_time_decode_attn": "0.0",
+     "request_waiting_time_decode_ffn": "0.0",
+     "request_hidden_waiting_time": "0.0",
+     "request_final_waiting_time": "483.30470968822914",
+     "request_hidden_service_time": "0.0",
+     "request_final_service_time": "3626.000000000041",
+     "final_round_prefill_wait_ms": "0.0",
+     "final_round_decode_wait_ms": "0.0",
+     "final_round_prefill_service_ms": "0.0",
+     "late_hidden_prefill_wait_ms": "0.0",
+     "request_thinking_time": "0.0",
+     "request_tool_call_time": "0.0",
+     "prefill_e2e_time": "1519.3047096882185",
+     "prefill_execution_plus_preemption": "1035.9999999999893",
+     "prefill_execution_plus_preemption_per_token": "12.949999999999868",
+     "decode_e2e_time": "2590.0000000000514",
+     "decode_e2e_time_per_token": "431.66666666667527",
+     "decode_first_token_latency": "518.0000000000002",
+     "ttft": "1519.3047096882185",
+     "ttft_prefill_only": "1035.9999999999893",
+     "ttft_kv_transfer": "0.0",
+     "ttft_decode_first_token": "483.304709688229",
+     "tpot": "518.0000000000102",
+     "tpot_computation": "518.0000000000102",
+     "tpot_transfer": "0.0",
+     "transfer_kv_cache": "0.0",
+     "transfer_m2n_total": "0.0",
+     "transfer_m2n_attn_to_ffn": "0.0",
+     "transfer_m2n_ffn_to_attn": "0.0",
+     "cluster_prefill_computation": "0.0",
+     "cluster_decode_attn_computation": "0.0",
+     "cluster_decode_ffn_computation": "0.0",
+     "cluster_decode_computation": "0.0",
+     "cluster_decode_attn_e2e_time": "0.0",
+     "cluster_decode_ffn_e2e_time": "0.0",
+     "request_inter_arrival_delay": "0.03216240640749654",
+     "request_num_tokens": "86",
+     "request_num_prefill_tokens": "80",
+     "request_num_decode_tokens": "6",
+     "request_pd_ratio": "13.333333333333334",
+     "request_num_restarts": "0",
+     "request_thinking_round_count": "0",
+     "request_session_id": "",
+     "request_cohort": "",
+     "request_sj2q_pen_qshort_entries_total": "0",
+     "request_sj2q_pen_qshort_long_history_entries_total": "0",
+     "request_sj2q_pen_qlong_entries_total": "0",
+     "request_sj2q_pen_long_history_to_qshort_reentry_count": "0",
+     "request_sj2q_pen_first_long_history_round_number": "0",
+     "request_total_preemption_count": "0",
+     "request_prefill_preemption_count": "0",
+     "request_decode_preemption_count": "0",
+     "request_decode_attn_preemption_count": "0",
+     "request_hidden_preemption_count": "0",
+     "request_final_preemption_count": "0",
+     "request_decode_tokens_at_preemption_all": "",
+     "request_decode_attn_tokens_at_preemption_all": "",
+     "request_decode_tokens_at_preemption_mean": "0",
+     "request_decode_tokens_at_preemption_max": "0",
+     "request_decode_tokens_at_preemption_min": "0",
+     "request_spec_total_iterations": "0",
+     "request_spec_accepted_drafts": "0",
+     "request_spec_rejected_drafts": "0",
+     "request_spec_committed_tokens": "0",
+     "request_spec_acceptance_ratio": "0.0",
+     "request_spec_committed_per_iteration": "0.0"
+    }
+   ]
+  },
+  "system_metrics.json": {
+   "kind": "json",
+   "value": {
+    "simulation_metadata": {
+     "total_requests": 3,
+     "completed_requests": 3,
+     "system_architecture": "co-location",
+     "server_count": 1
+    },
+    "quantization_config": {
+     "config_path": "model_config",
+     "default_precision": "BF16",
+     "custom_operation_count": 0,
+     "config_hash": "f0618acc33e61ee37946c1059f8024d4e4f8c76b63cd7c050082a183ccc4ac1a"
+    },
+    "ttft_statistics": {
+     "count": 3,
+     "mean": 1368.9239419279763,
+     "median": 1519.3047096882185,
+     "std": 235.77866517580898,
+     "min": 1035.9999999999957,
+     "max": 1551.467116095715,
+     "p50": 1519.3047096882185,
+     "p90": 1545.0346348142157,
+     "p95": 1548.2508754549654,
+     "p99": 1550.823867967565,
+     "unit": "ms"
+    },
+    "tpot_statistics": {
+     "count": 3,
+     "mean": 518.0000000000093,
+     "median": 518.0000000000102,
+     "std": 1.2862197421537486e-12,
+     "min": 518.0000000000075,
+     "max": 518.0000000000102,
+     "p50": 518.0000000000102,
+     "p90": 518.0000000000102,
+     "p95": 518.0000000000102,
+     "p99": 518.0000000000102,
+     "unit": "ms",
+     "note": "TPOT is only computed for requests with num_decode_tokens > 1. Computed from 3 out of 3 requests."
+    },
+    "request_e2e_time_statistics": {
+     "count": 3,
+     "mean": 3958.9239419280225,
+     "median": 4109.30470968827,
+     "std": 235.77866517581586,
+     "min": 3626.0000000000323,
+     "max": 4141.467116095766,
+     "p50": 4109.30470968827,
+     "p90": 4135.034634814267,
+     "p95": 4138.250875455016,
+     "p99": 4140.823867967616,
+     "unit": "ms"
+    },
+    "throughput_metrics": {
+     "total_duration_ms": 4144.00000000004,
+     "total_duration_seconds": 4.14400000000004,
+     "requests_per_second": 0.7239382239382169,
+     "total_tokens_processed": 258,
+     "total_decode_tokens_generated": 18,
+     "tokens_per_second": 62.258687258686656,
+     "decode_tokens_per_second": 4.343629343629302
+    },
+    "spec_decode_statistics": {
+     "total_iterations": 0,
+     "total_accepted_drafts": 0,
+     "total_rejected_drafts": 0,
+     "total_committed_tokens": 0,
+     "acceptance_ratio": 0.0,
+     "avg_committed_tokens_per_iteration": 0.0
+    },
+    "preemption_statistics": {
+     "total_preemption_events": 0,
+     "total_preempted_requests": 0,
+     "preemption_rate": 0.0,
+     "by_cluster_type": {}
+    },
+    "model_weight_memory": {
+     "MONOLITHIC": {
+      "total_parameters": 874512384,
+      "total_memory_bytes": 1749024768,
+      "total_memory_gb": 1.62890625,
+      "memory_utilization_percent": 2.0361328125,
+      "breakdown": {
+       "attention_parameters": 167772160,
+       "attention_memory_bytes": 335544320,
+       "attention_memory_gb": 0.3125,
+       "ffn_parameters": 706740224,
+       "ffn_memory_bytes": 1413480448,
+       "ffn_memory_gb": 1.31640625
+      },
+      "device_info": {
+       "device_type": "A100",
+       "total_device_memory_gb": 80.0,
+       "num_replicas": 1,
+       "expert_parallel_size": 2,
+       "moe_tensor_parallel_size": 2
+      }
+     }
+    },
+    "memory_utilization_percent": {
+     "MONOLITHIC": 2.0361328125
+    },
+    "system_architecture_info": {
+     "system_architecture": "co-location",
+     "cluster_configurations": {
+      "MONOLITHIC": {
+       "num_replicas": 1,
+       "parallel_parameters": {
+        "PP": 1,
+        "ATTN_TP": 4,
+        "MOE_TP": 2,
+        "MOE_EP": 2
+       },
+       "device_type": "A100",
+       "model_name": "Phi-tiny-MoE-instruct"
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,587 @@
+{
+ "recorded_from": "4ab19644658b54c65606753d746bae3e7d2fd76b",
+ "digest_version": 1,
+ "scenario": {
+  "id": "co-location_online_dense_model_basic_chunked",
+  "script": "examples/architecture/co-location/online/dense_model_basic_online.sh",
+  "settings": {
+   "NUM_REQUESTS": "3",
+   "PREFILL_TOKENS": "80",
+   "DECODE_TOKENS": "6",
+   "QPS": "10"
+  },
+  "flags": [],
+  "expected_requests": 3
+ },
+ "artifacts": {
+  "frontier_stage_batch_ledger.jsonl": {
+   "kind": "hash",
+   "rows": 8,
+   "sha256": "8e15736c170ae50fc8a0bdb19b7bc099baa04c1f5b6df2dd95e861ef190e9bbe"
+  },
+  "op_precision_metadata.csv": {
+   "kind": "rows",
+   "rows": [
+    {
+     "operation": "add",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_decode",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_inter_norm",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_kv_cache_save",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_decode",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_decode_q_latent_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_kv_cache_save",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_prefill",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_prefill_kv_up_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_v_up_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_post_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_pre_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_prefill",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_rope",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_wq_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "emb",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "input_layernorm",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "lm_head_linear",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "mlp_act",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "mlp_down_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "mlp_up_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_gating",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_gating_linear",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_gating_routing_topk",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_grouped_gemm",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_shuffling",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "mtp_fusion_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "post_attention_layernorm",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "share_expert_act",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "share_expert_down_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "share_expert_up_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    }
+   ]
+  },
+  "request_metrics.csv": {
+   "kind": "rows",
+   "rows": [
+    {
+     "Request Id": "0",
+     "request_e2e_time": "3191.9999999999995",
+     "request_e2e_time_normalized": "531.9999999999999",
+     "request_execution_time": "3192.0",
+     "request_execution_time_normalized": "532.0",
+     "request_model_execution_time": "3143.0",
+     "request_model_execution_time_normalized": "523.8333333333333",
+     "request_preemption_time": "0.0",
+     "request_first_scheduling_delay": "0.0",
+     "request_execution_plus_preemption_time": "3192.0",
+     "request_execution_plus_preemption_time_normalized": "532.0",
+     "request_waiting_time_total": "0.0",
+     "request_waiting_time_prefill": "0.0",
+     "request_waiting_time_decode": "0.0",
+     "request_waiting_time_decode_attn": "0.0",
+     "request_waiting_time_decode_ffn": "0.0",
+     "request_hidden_waiting_time": "0.0",
+     "request_final_waiting_time": "0.0",
+     "request_hidden_service_time": "0.0",
+     "request_final_service_time": "3191.9999999999995",
+     "final_round_prefill_wait_ms": "0.0",
+     "final_round_decode_wait_ms": "0.0",
+     "final_round_prefill_service_ms": "0.0",
+     "late_hidden_prefill_wait_ms": "0.0",
+     "request_thinking_time": "0.0",
+     "request_tool_call_time": "0.0",
+     "prefill_e2e_time": "912.0",
+     "prefill_execution_plus_preemption": "912.0",
+     "prefill_execution_plus_preemption_per_token": "11.4",
+     "decode_e2e_time": "2280.0",
+     "decode_e2e_time_per_token": "379.99999999999994",
+     "decode_first_token_latency": "455.99999999999994",
+     "ttft": "912.0",
+     "ttft_prefill_only": "912.0",
+     "ttft_kv_transfer": "0.0",
+     "ttft_decode_first_token": "0.0",
+     "tpot": "455.99999999999994",
+     "tpot_computation": "455.99999999999994",
+     "tpot_transfer": "0.0",
+     "transfer_kv_cache": "0.0",
+     "transfer_m2n_total": "0.0",
+     "transfer_m2n_attn_to_ffn": "0.0",
+     "transfer_m2n_ffn_to_attn": "0.0",
+     "cluster_prefill_computation": "0.0",
+     "cluster_decode_attn_computation": "0.0",
+     "cluster_decode_ffn_computation": "0.0",
+     "cluster_decode_computation": "0.0",
+     "cluster_decode_attn_e2e_time": "0.0",
+     "cluster_decode_ffn_e2e_time": "0.0",
+     "request_inter_arrival_delay": "",
+     "request_num_tokens": "86",
+     "request_num_prefill_tokens": "80",
+     "request_num_decode_tokens": "6",
+     "request_pd_ratio": "13.333333333333334",
+     "request_num_restarts": "0",
+     "request_thinking_round_count": "0",
+     "request_session_id": "",
+     "request_cohort": "",
+     "request_sj2q_pen_qshort_entries_total": "0",
+     "request_sj2q_pen_qshort_long_history_entries_total": "0",
+     "request_sj2q_pen_qlong_entries_total": "0",
+     "request_sj2q_pen_long_history_to_qshort_reentry_count": "0",
+     "request_sj2q_pen_first_long_history_round_number": "0",
+     "request_total_preemption_count": "0",
+     "request_prefill_preemption_count": "0",
+     "request_decode_preemption_count": "0",
+     "request_decode_attn_preemption_count": "0",
+     "request_hidden_preemption_count": "0",
+     "request_final_preemption_count": "0",
+     "request_decode_tokens_at_preemption_all": "",
+     "request_decode_attn_tokens_at_preemption_all": "",
+     "request_decode_tokens_at_preemption_mean": "0",
+     "request_decode_tokens_at_preemption_max": "0",
+     "request_decode_tokens_at_preemption_min": "0",
+     "request_spec_total_iterations": "0",
+     "request_spec_accepted_drafts": "0",
+     "request_spec_rejected_drafts": "0",
+     "request_spec_committed_tokens": "0",
+     "request_spec_acceptance_ratio": "0.0",
+     "request_spec_committed_per_iteration": "0.0"
+    },
+    {
+     "Request Id": "1",
+     "request_e2e_time": "3645.467116095726",
+     "request_e2e_time_normalized": "607.577852682621",
+     "request_execution_time": "3192.0",
+     "request_execution_time_normalized": "532.0",
+     "request_model_execution_time": "3143.0",
+     "request_model_execution_time_normalized": "523.8333333333333",
+     "request_preemption_time": "0.0",
+     "request_first_scheduling_delay": "453.4671160957262",
+     "request_execution_plus_preemption_time": "3192.0",
+     "request_execution_plus_preemption_time_normalized": "532.0",
+     "request_waiting_time_total": "453.4671160957262",
+     "request_waiting_time_prefill": "0.0",
+     "request_waiting_time_decode": "0.0",
+     "request_waiting_time_decode_attn": "0.0",
+     "request_waiting_time_decode_ffn": "0.0",
+     "request_hidden_waiting_time": "0.0",
+     "request_final_waiting_time": "453.4671160957262",
+     "request_hidden_service_time": "0.0",
+     "request_final_service_time": "3191.9999999999995",
+     "final_round_prefill_wait_ms": "0.0",
+     "final_round_decode_wait_ms": "0.0",
+     "final_round_prefill_service_ms": "0.0",
+     "late_hidden_prefill_wait_ms": "0.0",
+     "request_thinking_time": "0.0",
+     "request_tool_call_time": "0.0",
+     "prefill_e2e_time": "1365.4671160957262",
+     "prefill_execution_plus_preemption": "911.9999999999999",
+     "prefill_execution_plus_preemption_per_token": "11.399999999999999",
+     "decode_e2e_time": "2280.0",
+     "decode_e2e_time_per_token": "379.99999999999994",
+     "decode_first_token_latency": "455.99999999999994",
+     "ttft": "1365.4671160957262",
+     "ttft_prefill_only": "911.9999999999999",
+     "ttft_kv_transfer": "0.0",
+     "ttft_decode_first_token": "453.4671160957262",
+     "tpot": "455.99999999999994",
+     "tpot_computation": "455.99999999999994",
+     "tpot_transfer": "0.0",
+     "transfer_kv_cache": "0.0",
+     "transfer_m2n_total": "0.0",
+     "transfer_m2n_attn_to_ffn": "0.0",
+     "transfer_m2n_ffn_to_attn": "0.0",
+     "cluster_prefill_computation": "0.0",
+     "cluster_decode_attn_computation": "0.0",
+     "cluster_decode_ffn_computation": "0.0",
+     "cluster_decode_computation": "0.0",
+     "cluster_decode_attn_e2e_time": "0.0",
+     "cluster_decode_ffn_e2e_time": "0.0",
+     "request_inter_arrival_delay": "0.0025328839042738915",
+     "request_num_tokens": "86",
+     "request_num_prefill_tokens": "80",
+     "request_num_decode_tokens": "6",
+     "request_pd_ratio": "13.333333333333334",
+     "request_num_restarts": "0",
+     "request_thinking_round_count": "0",
+     "request_session_id": "",
+     "request_cohort": "",
+     "request_sj2q_pen_qshort_entries_total": "0",
+     "request_sj2q_pen_qshort_long_history_entries_total": "0",
+     "request_sj2q_pen_qlong_entries_total": "0",
+     "request_sj2q_pen_long_history_to_qshort_reentry_count": "0",
+     "request_sj2q_pen_first_long_history_round_number": "0",
+     "request_total_preemption_count": "0",
+     "request_prefill_preemption_count": "0",
+     "request_decode_preemption_count": "0",
+     "request_decode_attn_preemption_count": "0",
+     "request_hidden_preemption_count": "0",
+     "request_final_preemption_count": "0",
+     "request_decode_tokens_at_preemption_all": "",
+     "request_decode_attn_tokens_at_preemption_all": "",
+     "request_decode_tokens_at_preemption_mean": "0",
+     "request_decode_tokens_at_preemption_max": "0",
+     "request_decode_tokens_at_preemption_min": "0",
+     "request_spec_total_iterations": "0",
+     "request_spec_accepted_drafts": "0",
+     "request_spec_rejected_drafts": "0",
+     "request_spec_committed_tokens": "0",
+     "request_spec_acceptance_ratio": "0.0",
+     "request_spec_committed_per_iteration": "0.0"
+    },
+    {
+     "Request Id": "2",
+     "request_e2e_time": "3613.304709688229",
+     "request_e2e_time_normalized": "602.2174516147048",
+     "request_execution_time": "3192.0",
+     "request_execution_time_normalized": "532.0",
+     "request_model_execution_time": "3143.0",
+     "request_model_execution_time_normalized": "523.8333333333333",
+     "request_preemption_time": "0.0",
+     "request_first_scheduling_delay": "421.30470968822965",
+     "request_execution_plus_preemption_time": "3192.0",
+     "request_execution_plus_preemption_time_normalized": "532.0",
+     "request_waiting_time_total": "421.30470968822965",
+     "request_waiting_time_prefill": "0.0",
+     "request_waiting_time_decode": "0.0",
+     "request_waiting_time_decode_attn": "0.0",
+     "request_waiting_time_decode_ffn": "0.0",
+     "request_hidden_waiting_time": "0.0",
+     "request_final_waiting_time": "421.30470968822965",
+     "request_hidden_service_time": "0.0",
+     "request_final_service_time": "3191.9999999999995",
+     "final_round_prefill_wait_ms": "0.0",
+     "final_round_decode_wait_ms": "0.0",
+     "final_round_prefill_service_ms": "0.0",
+     "late_hidden_prefill_wait_ms": "0.0",
+     "request_thinking_time": "0.0",
+     "request_tool_call_time": "0.0",
+     "prefill_e2e_time": "1333.3047096882297",
+     "prefill_execution_plus_preemption": "911.9999999999999",
+     "prefill_execution_plus_preemption_per_token": "11.399999999999999",
+     "decode_e2e_time": "2280.0",
+     "decode_e2e_time_per_token": "379.99999999999994",
+     "decode_first_token_latency": "455.99999999999994",
+     "ttft": "1333.3047096882297",
+     "ttft_prefill_only": "911.9999999999999",
+     "ttft_kv_transfer": "0.0",
+     "ttft_decode_first_token": "421.30470968822965",
+     "tpot": "455.99999999999994",
+     "tpot_computation": "455.99999999999994",
+     "tpot_transfer": "0.0",
+     "transfer_kv_cache": "0.0",
+     "transfer_m2n_total": "0.0",
+     "transfer_m2n_attn_to_ffn": "0.0",
+     "transfer_m2n_ffn_to_attn": "0.0",
+     "cluster_prefill_computation": "0.0",
+     "cluster_decode_attn_computation": "0.0",
+     "cluster_decode_ffn_computation": "0.0",
+     "cluster_decode_computation": "0.0",
+     "cluster_decode_attn_e2e_time": "0.0",
+     "cluster_decode_ffn_e2e_time": "0.0",
+     "request_inter_arrival_delay": "0.03216240640749654",
+     "request_num_tokens": "86",
+     "request_num_prefill_tokens": "80",
+     "request_num_decode_tokens": "6",
+     "request_pd_ratio": "13.333333333333334",
+     "request_num_restarts": "0",
+     "request_thinking_round_count": "0",
+     "request_session_id": "",
+     "request_cohort": "",
+     "request_sj2q_pen_qshort_entries_total": "0",
+     "request_sj2q_pen_qshort_long_history_entries_total": "0",
+     "request_sj2q_pen_qlong_entries_total": "0",
+     "request_sj2q_pen_long_history_to_qshort_reentry_count": "0",
+     "request_sj2q_pen_first_long_history_round_number": "0",
+     "request_total_preemption_count": "0",
+     "request_prefill_preemption_count": "0",
+     "request_decode_preemption_count": "0",
+     "request_decode_attn_preemption_count": "0",
+     "request_hidden_preemption_count": "0",
+     "request_final_preemption_count": "0",
+     "request_decode_tokens_at_preemption_all": "",
+     "request_decode_attn_tokens_at_preemption_all": "",
+     "request_decode_tokens_at_preemption_mean": "0",
+     "request_decode_tokens_at_preemption_max": "0",
+     "request_decode_tokens_at_preemption_min": "0",
+     "request_spec_total_iterations": "0",
+     "request_spec_accepted_drafts": "0",
+     "request_spec_rejected_drafts": "0",
+     "request_spec_committed_tokens": "0",
+     "request_spec_acceptance_ratio": "0.0",
+     "request_spec_committed_per_iteration": "0.0"
+    }
+   ]
+  },
+  "system_metrics.json": {
+   "kind": "json",
+   "value": {
+    "simulation_metadata": {
+     "total_requests": 3,
+     "completed_requests": 3,
+     "system_architecture": "co-location",
+     "server_count": 1
+    },
+    "quantization_config": {
+     "config_path": "model_config",
+     "default_precision": "FP16",
+     "custom_operation_count": 0,
+     "config_hash": "42109853e89a56d3df2f6c05e59e80a447b1f2cc8e73e79661fed2736e268699"
+    },
+    "ttft_statistics": {
+     "count": 3,
+     "mean": 1203.590608594652,
+     "median": 1333.3047096882297,
+     "std": 206.60335163775355,
+     "min": 912.0,
+     "max": 1365.4671160957262,
+     "p50": 1333.3047096882297,
+     "p90": 1359.0346348142268,
+     "p95": 1362.2508754549765,
+     "p99": 1364.8238679675762,
+     "unit": "ms"
+    },
+    "tpot_statistics": {
+     "count": 3,
+     "mean": 455.99999999999994,
+     "median": 455.99999999999994,
+     "std": 0.0,
+     "min": 455.99999999999994,
+     "max": 455.99999999999994,
+     "p50": 455.99999999999994,
+     "p90": 455.99999999999994,
+     "p95": 455.99999999999994,
+     "p99": 455.99999999999994,
+     "unit": "ms",
+     "note": "TPOT is only computed for requests with num_decode_tokens > 1. Computed from 3 out of 3 requests."
+    },
+    "request_e2e_time_statistics": {
+     "count": 3,
+     "mean": 3483.5906085946517,
+     "median": 3613.304709688229,
+     "std": 206.60335163775363,
+     "min": 3191.9999999999995,
+     "max": 3645.467116095726,
+     "p50": 3613.304709688229,
+     "p90": 3639.0346348142266,
+     "p95": 3642.2508754549763,
+     "p99": 3644.823867967576,
+     "unit": "ms"
+    },
+    "throughput_metrics": {
+     "total_duration_ms": 3647.9999999999995,
+     "total_duration_seconds": 3.6479999999999997,
+     "requests_per_second": 0.8223684210526316,
+     "total_tokens_processed": 258,
+     "total_decode_tokens_generated": 18,
+     "tokens_per_second": 70.72368421052632,
+     "decode_tokens_per_second": 4.93421052631579
+    },
+    "spec_decode_statistics": {
+     "total_iterations": 0,
+     "total_accepted_drafts": 0,
+     "total_rejected_drafts": 0,
+     "total_committed_tokens": 0,
+     "acceptance_ratio": 0.0,
+     "avg_committed_tokens_per_iteration": 0.0
+    },
+    "preemption_statistics": {
+     "total_preemption_events": 0,
+     "total_preempted_requests": 0,
+     "preemption_rate": 0.0,
+     "by_cluster_type": {}
+    },
+    "model_weight_memory": {
+     "MONOLITHIC": {
+      "total_parameters": 3238002688,
+      "total_memory_bytes": 6476005376,
+      "total_memory_gb": 6.03125,
+      "memory_utilization_percent": 7.5390625,
+      "breakdown": {
+       "attention_parameters": 1073741824,
+       "attention_memory_bytes": 2147483648,
+       "attention_memory_gb": 2.0,
+       "ffn_parameters": 2164260864,
+       "ffn_memory_bytes": 4328521728,
+       "ffn_memory_gb": 4.03125
+      },
+      "device_info": {
+       "device_type": "A100",
+       "total_device_memory_gb": 80.0,
+       "num_replicas": 1,
+       "expert_parallel_size": 1,
+       "moe_tensor_parallel_size": 1
+      }
+     }
+    },
+    "memory_utilization_percent": {
+     "MONOLITHIC": 7.5390625
+    },
+    "system_architecture_info": {
+     "system_architecture": "co-location",
+     "cluster_configurations": {
+      "MONOLITHIC": {
+       "num_replicas": 1,
+       "parallel_parameters": {
+        "PP": 1,
+        "ATTN_TP": 2,
+        "MOE_TP": 1,
+        "MOE_EP": 1
+       },
+       "device_type": "A100",
+       "model_name": "meta-llama/Llama-2-7b-hf"
+      }
+     }
+    }
+   }
+  }
+ }
+}

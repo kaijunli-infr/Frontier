@@ -6,6 +6,7 @@
 
 | Date       | Summary of Changes |
 | ---------- | ------------------ |
+| 2026-09-28 | Added the checked-in golden matrix under `tests/golden_matrix/` as the refactor safety net. |
 | 2026-09-06 | Added the `FRONTIER_TMP_ROOT` and `FRONTIER_PDAF_REFERENCE_REPO_ROOT` overrides for developer-specific test-harness paths. |
 | 2026-09-05 | Added the authoritative vLLM parallel-semantics and Frontier lane-mapping contract. |
 | 2026-09-05 | Clarified Replica-local collective backend materialization. |
@@ -779,6 +780,10 @@ Start with:
 - `pytest tests/unit/test_pdd_public_surface_docs.py tests/unit/test_examples_pdd_scripts.py -q`
 - `bash tests/debug/e2e-level/monolith_mode/scripts/test_dense_tp2_pp2_dummy.sh`
 - `bash tests/debug/e2e-level/monolith_mode/scripts/test_moe_tp2_ep2_pp2_dummy.sh`
+
+### Golden matrix for refactors
+
+`tests/golden_matrix/` holds a checked-in digest of `request_metrics.csv`, `system_metrics.json`, and the stage/transfer/EP-wave ledgers for the 58 dummy-mode release scenarios shared with `tests/integration/run_scheduler_refactor_fidelity.py`. Run `python -m pytest tests/golden_matrix -q` before and after any refactor; it satisfies the ≥50-scenario gate in under a minute. Re-record with `python tests/golden_matrix/run_golden_matrix.py --record` only for an explicitly approved fidelity change. See `tests/golden_matrix/README.md`.
 
 ### Scratch root for heavyweight harnesses
 

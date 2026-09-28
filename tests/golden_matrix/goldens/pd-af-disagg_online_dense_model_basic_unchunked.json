@@ -1,0 +1,789 @@
+{
+ "recorded_from": "4ab19644658b54c65606753d746bae3e7d2fd76b",
+ "digest_version": 1,
+ "scenario": {
+  "id": "pd-af-disagg_online_dense_model_basic_unchunked",
+  "script": "examples/architecture/pd-af-disagg/online/dense_model_basic_online.sh",
+  "settings": {
+   "NUM_REQUESTS": "4",
+   "PREFILL_TOKENS": "32",
+   "DECODE_TOKENS": "3",
+   "QPS": "100",
+   "ENABLE_CHUNKED_PREFILL": "false",
+   "LONG_PREFILL_TOKEN_THRESHOLD": "0"
+  },
+  "flags": [],
+  "expected_requests": 4
+ },
+ "artifacts": {
+  "frontier_stage_batch_ledger.jsonl": {
+   "kind": "hash",
+   "rows": 194,
+   "sha256": "bec7b5b6976f79144085aff1583c6113f2955909d115a1732c21ad40db4cb860"
+  },
+  "frontier_transfer_ledger.jsonl": {
+   "kind": "hash",
+   "rows": 196,
+   "sha256": "51d9277e69d909c9b7e8b6d66c431f8ecf105d078a893fa5fe865cdcfab785d1"
+  },
+  "op_precision_metadata.csv": {
+   "kind": "rows",
+   "rows": [
+    {
+     "operation": "add",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_decode",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_inter_norm",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_kv_cache_save",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_decode",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_decode_q_latent_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_kv_cache_save",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_prefill",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_prefill_kv_up_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_mla_v_up_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_post_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_pre_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_prefill",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_rope",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "attn_wq_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "emb",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "input_layernorm",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "lm_head_linear",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "mlp_act",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "mlp_down_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "mlp_up_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_gating",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_gating_linear",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_gating_routing_topk",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_grouped_gemm",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "moe_shuffling",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "mtp_fusion_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "post_attention_layernorm",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "share_expert_act",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "share_expert_down_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    },
+    {
+     "operation": "share_expert_up_proj",
+     "precision": "FP16",
+     "data_source": "profiling",
+     "approximation_factor": ""
+    }
+   ]
+  },
+  "request_metrics.csv": {
+   "kind": "rows",
+   "rows": [
+    {
+     "Request Id": "0",
+     "request_e2e_time": "1836.591803306667",
+     "request_e2e_time_normalized": "612.1972677688891",
+     "request_execution_time": "1830.000000000001",
+     "request_execution_time_normalized": "610.0000000000003",
+     "request_model_execution_time": "1505.0000000000007",
+     "request_model_execution_time_normalized": "501.6666666666669",
+     "request_preemption_time": "0.0",
+     "request_first_scheduling_delay": "0.0",
+     "request_execution_plus_preemption_time": "1830.000000000001",
+     "request_execution_plus_preemption_time_normalized": "610.0000000000003",
+     "request_waiting_time_total": "0.0",
+     "request_waiting_time_prefill": "0.0",
+     "request_waiting_time_decode": "0.0",
+     "request_waiting_time_decode_attn": "0.0",
+     "request_waiting_time_decode_ffn": "0.0",
+     "request_hidden_waiting_time": "0.0",
+     "request_final_waiting_time": "0.0",
+     "request_hidden_service_time": "0.0",
+     "request_final_service_time": "404.1693973333332",
+     "final_round_prefill_wait_ms": "0.0",
+     "final_round_decode_wait_ms": "0.0",
+     "final_round_prefill_service_ms": "358.0",
+     "late_hidden_prefill_wait_ms": "0.0",
+     "request_thinking_time": "0.0",
+     "request_tool_call_time": "0.0",
+     "prefill_e2e_time": "358.0",
+     "prefill_execution_plus_preemption": "358.0",
+     "prefill_execution_plus_preemption_per_token": "11.1875",
+     "decode_e2e_time": "1478.5918033066669",
+     "decode_e2e_time_per_token": "492.8639344355557",
+     "decode_first_token_latency": "739.8552315733331",
+     "ttft": "358.0",
+     "ttft_prefill_only": "358.0",
+     "ttft_kv_transfer": "1.1710886399999842",
+     "ttft_decode_first_token": "0.0",
+     "tpot": "739.2959016533334",
+     "tpot_computation": "736.5855443199986",
+     "tpot_transfer": "2.710357333334912",
+     "transfer_kv_cache": "1.1710886399999842",
+     "transfer_kv_cache_request_start_ts": "368.200602872748",
+     "transfer_kv_cache_request_end_ts": "369.37169151274793",
+     "transfer_m2n_total": "5.420714666669824",
+     "transfer_m2n_attn_to_ffn": "2.710357333334912",
+     "transfer_m2n_ffn_to_attn": "2.710357333334912",
+     "cluster_prefill_computation": "358.0",
+     "cluster_decode_attn_computation": "832.0000000000007",
+     "cluster_decode_ffn_computation": "640.0000000000003",
+     "cluster_decode_computation": "0.0",
+     "cluster_decode_attn_e2e_time": "832.0000000000007",
+     "cluster_decode_ffn_e2e_time": "640.0000000000006",
+     "request_inter_arrival_delay": "",
+     "request_num_tokens": "35",
+     "request_num_prefill_tokens": "32",
+     "request_num_decode_tokens": "3",
+     "request_pd_ratio": "10.666666666666666",
+     "request_num_restarts": "0",
+     "request_thinking_round_count": "0",
+     "request_session_id": "",
+     "request_cohort": "",
+     "request_sj2q_pen_qshort_entries_total": "0",
+     "request_sj2q_pen_qshort_long_history_entries_total": "0",
+     "request_sj2q_pen_qlong_entries_total": "0",
+     "request_sj2q_pen_long_history_to_qshort_reentry_count": "0",
+     "request_sj2q_pen_first_long_history_round_number": "0",
+     "request_total_preemption_count": "0",
+     "request_prefill_preemption_count": "0",
+     "request_decode_preemption_count": "0",
+     "request_decode_attn_preemption_count": "0",
+     "request_hidden_preemption_count": "0",
+     "request_final_preemption_count": "0",
+     "request_decode_tokens_at_preemption_all": "",
+     "request_decode_attn_tokens_at_preemption_all": "",
+     "request_decode_tokens_at_preemption_mean": "0",
+     "request_decode_tokens_at_preemption_max": "0",
+     "request_decode_tokens_at_preemption_min": "0",
+     "request_spec_total_iterations": "0",
+     "request_spec_accepted_drafts": "0",
+     "request_spec_rejected_drafts": "0",
+     "request_spec_committed_tokens": "0",
+     "request_spec_acceptance_ratio": "0.0",
+     "request_spec_committed_per_iteration": "0.0"
+    },
+    {
+     "Request Id": "1",
+     "request_e2e_time": "2575.0576103828935",
+     "request_e2e_time_normalized": "858.3525367942977",
+     "request_execution_time": "1830.000000000001",
+     "request_execution_time_normalized": "610.0000000000003",
+     "request_model_execution_time": "1505.0000000000007",
+     "request_model_execution_time_normalized": "501.6666666666669",
+     "request_preemption_time": "0.0",
+     "request_first_scheduling_delay": "357.74671160957257",
+     "request_execution_plus_preemption_time": "1830.000000000001",
+     "request_execution_plus_preemption_time_normalized": "610.0000000000003",
+     "request_waiting_time_total": "738.4308545429056",
+     "request_waiting_time_prefill": "357.74671160957257",
+     "request_waiting_time_decode": "0.0",
+     "request_waiting_time_decode_attn": "380.6841429333332",
+     "request_waiting_time_decode_ffn": "0.0",
+     "request_hidden_waiting_time": "0.0",
+     "request_final_waiting_time": "738.4308545429056",
+     "request_hidden_service_time": "0.0",
+     "request_final_service_time": "404.1704895999994",
+     "final_round_prefill_wait_ms": "357.74671160957257",
+     "final_round_decode_wait_ms": "0.0",
+     "final_round_prefill_service_ms": "357.99999999999994",
+     "late_hidden_prefill_wait_ms": "0.0",
+     "request_thinking_time": "0.0",
+     "request_tool_call_time": "0.0",
+     "prefill_e2e_time": "715.7467116095725",
+     "prefill_execution_plus_preemption": "357.99999999999994",
+     "prefill_execution_plus_preemption_per_token": "11.187499999999998",
+     "decode_e2e_time": "1859.3108987733208",
+     "decode_e2e_time_per_token": "619.7702995911069",
+     "decode_first_token_latency": "1120.591803306667",
+     "ttft": "715.7467116095725",
+     "ttft_prefill_only": "357.99999999999994",
+     "ttft_kv_transfer": "1.1710886400000398",
+     "ttft_decode_first_token": "356.5756229695725",
+     "tpot": "929.6554493866604",
+     "tpot_computation": "926.9276157866608",
+     "tpot_transfer": "2.7278335999995074",
+     "transfer_kv_cache": "1.1710886400000398",
+     "transfer_kv_cache_request_start_ts": "726.2006028727479",
+     "transfer_kv_cache_request_end_ts": "727.3716915127479",
+     "transfer_m2n_total": "5.455667199999015",
+     "transfer_m2n_attn_to_ffn": "2.7278335999996184",
+     "transfer_m2n_ffn_to_attn": "2.7278335999993963",
+     "cluster_prefill_computation": "358.0",
+     "cluster_decode_attn_computation": "832.0000000000007",
+     "cluster_decode_ffn_computation": "640.0000000000003",
+     "cluster_decode_computation": "0.0",
+     "cluster_decode_attn_e2e_time": "832.0000000000007",
+     "cluster_decode_ffn_e2e_time": "639.9999999999948",
+     "request_inter_arrival_delay": "0.00025328839042738915",
+     "request_num_tokens": "35",
+     "request_num_prefill_tokens": "32",
+     "request_num_decode_tokens": "3",
+     "request_pd_ratio": "10.666666666666666",
+     "request_num_restarts": "0",
+     "request_thinking_round_count": "0",
+     "request_session_id": "",
+     "request_cohort": "",
+     "request_sj2q_pen_qshort_entries_total": "0",
+     "request_sj2q_pen_qshort_long_history_entries_total": "0",
+     "request_sj2q_pen_qlong_entries_total": "0",
+     "request_sj2q_pen_long_history_to_qshort_reentry_count": "0",
+     "request_sj2q_pen_first_long_history_round_number": "0",
+     "request_total_preemption_count": "0",
+     "request_prefill_preemption_count": "0",
+     "request_decode_preemption_count": "0",
+     "request_decode_attn_preemption_count": "0",
+     "request_hidden_preemption_count": "0",
+     "request_final_preemption_count": "0",
+     "request_decode_tokens_at_preemption_all": "",
+     "request_decode_attn_tokens_at_preemption_all": "",
+     "request_decode_tokens_at_preemption_mean": "0",
+     "request_decode_tokens_at_preemption_max": "0",
+     "request_decode_tokens_at_preemption_min": "0",
+     "request_spec_total_iterations": "0",
+     "request_spec_accepted_drafts": "0",
+     "request_spec_rejected_drafts": "0",
+     "request_spec_committed_tokens": "0",
+     "request_spec_acceptance_ratio": "0.0",
+     "request_spec_committed_per_iteration": "0.0"
+    },
+    {
+     "Request Id": "2",
+     "request_e2e_time": "2571.841369742144",
+     "request_e2e_time_normalized": "857.2804565807145",
+     "request_execution_time": "1830.000000000001",
+     "request_execution_time_normalized": "610.0000000000003",
+     "request_model_execution_time": "1505.0000000000007",
+     "request_model_execution_time_normalized": "501.6666666666669",
+     "request_preemption_time": "0.0",
+     "request_first_scheduling_delay": "354.5304709688229",
+     "request_execution_plus_preemption_time": "1830.000000000001",
+     "request_execution_plus_preemption_time_normalized": "610.0000000000003",
+     "request_waiting_time_total": "735.2146139021561",
+     "request_waiting_time_prefill": "354.5304709688229",
+     "request_waiting_time_decode": "0.0",
+     "request_waiting_time_decode_attn": "380.6841429333332",
+     "request_waiting_time_decode_ffn": "0.0",
+     "request_hidden_waiting_time": "0.0",
+     "request_final_waiting_time": "735.2146139021561",
+     "request_hidden_service_time": "0.0",
+     "request_final_service_time": "404.1704895999994",
+     "final_round_prefill_wait_ms": "354.5304709688229",
+     "final_round_decode_wait_ms": "0.0",
+     "final_round_prefill_service_ms": "357.99999999999994",
+     "late_hidden_prefill_wait_ms": "0.0",
+     "request_thinking_time": "0.0",
+     "request_tool_call_time": "0.0",
+     "prefill_e2e_time": "712.5304709688228",
+     "prefill_execution_plus_preemption": "357.99999999999994",
+     "prefill_execution_plus_preemption_per_token": "11.187499999999998",
+     "decode_e2e_time": "1859.3108987733208",
+     "decode_e2e_time_per_token": "619.7702995911069",
+     "decode_first_token_latency": "1120.591803306667",
+     "ttft": "712.5304709688228",
+     "ttft_prefill_only": "357.99999999999994",
+     "ttft_kv_transfer": "1.1710886400000398",
+     "ttft_decode_first_token": "353.35938232882285",
+     "tpot": "929.6554493866604",
+     "tpot_computation": "926.9276157866608",
+     "tpot_transfer": "2.7278335999995074",
+     "transfer_kv_cache": "1.1710886400000398",
+     "transfer_kv_cache_request_start_ts": "726.2006028727479",
+     "transfer_kv_cache_request_end_ts": "727.3716915127479",
+     "transfer_m2n_total": "5.455667199999015",
+     "transfer_m2n_attn_to_ffn": "2.7278335999996184",
+     "transfer_m2n_ffn_to_attn": "2.7278335999993963",
+     "cluster_prefill_computation": "358.0",
+     "cluster_decode_attn_computation": "832.0000000000007",
+     "cluster_decode_ffn_computation": "640.0000000000003",
+     "cluster_decode_computation": "0.0",
+     "cluster_decode_attn_e2e_time": "832.0000000000007",
+     "cluster_decode_ffn_e2e_time": "639.9999999999948",
+     "request_inter_arrival_delay": "0.003216240640749655",
+     "request_num_tokens": "35",
+     "request_num_prefill_tokens": "32",
+     "request_num_decode_tokens": "3",
+     "request_pd_ratio": "10.666666666666666",
+     "request_num_restarts": "0",
+     "request_thinking_round_count": "0",
+     "request_session_id": "",
+     "request_cohort": "",
+     "request_sj2q_pen_qshort_entries_total": "0",
+     "request_sj2q_pen_qshort_long_history_entries_total": "0",
+     "request_sj2q_pen_qlong_entries_total": "0",
+     "request_sj2q_pen_long_history_to_qshort_reentry_count": "0",
+     "request_sj2q_pen_first_long_history_round_number": "0",
+     "request_total_preemption_count": "0",
+     "request_prefill_preemption_count": "0",
+     "request_decode_preemption_count": "0",
+     "request_decode_attn_preemption_count": "0",
+     "request_hidden_preemption_count": "0",
+     "request_final_preemption_count": "0",
+     "request_decode_tokens_at_preemption_all": "",
+     "request_decode_attn_tokens_at_preemption_all": "",
+     "request_decode_tokens_at_preemption_mean": "0",
+     "request_decode_tokens_at_preemption_max": "0",
+     "request_decode_tokens_at_preemption_min": "0",
+     "request_spec_total_iterations": "0",
+     "request_spec_accepted_drafts": "0",
+     "request_spec_rejected_drafts": "0",
+     "request_spec_committed_tokens": "0",
+     "request_spec_acceptance_ratio": "0.0",
+     "request_spec_committed_per_iteration": "0.0"
+    },
+    {
+     "Request Id": "3",
+     "request_e2e_time": "2569.3155078854425",
+     "request_e2e_time_normalized": "856.4385026284808",
+     "request_execution_time": "1830.000000000001",
+     "request_execution_time_normalized": "610.0000000000003",
+     "request_model_execution_time": "1505.0000000000007",
+     "request_model_execution_time_normalized": "501.6666666666669",
+     "request_preemption_time": "0.0",
+     "request_first_scheduling_delay": "352.0046091121218",
+     "request_execution_plus_preemption_time": "1830.000000000001",
+     "request_execution_plus_preemption_time_normalized": "610.0000000000003",
+     "request_waiting_time_total": "732.688752045455",
+     "request_waiting_time_prefill": "352.0046091121218",
+     "request_waiting_time_decode": "0.0",
+     "request_waiting_time_decode_attn": "380.6841429333332",
+     "request_waiting_time_decode_ffn": "0.0",
+     "request_hidden_waiting_time": "0.0",
+     "request_final_waiting_time": "732.688752045455",
+     "request_hidden_service_time": "0.0",
+     "request_final_service_time": "404.1704895999994",
+     "final_round_prefill_wait_ms": "352.0046091121218",
+     "final_round_decode_wait_ms": "0.0",
+     "final_round_prefill_service_ms": "357.99999999999994",
+     "late_hidden_prefill_wait_ms": "0.0",
+     "request_thinking_time": "0.0",
+     "request_tool_call_time": "0.0",
+     "prefill_e2e_time": "710.0046091121217",
+     "prefill_execution_plus_preemption": "357.99999999999994",
+     "prefill_execution_plus_preemption_per_token": "11.187499999999998",
+     "decode_e2e_time": "1859.3108987733208",
+     "decode_e2e_time_per_token": "619.7702995911069",
+     "decode_first_token_latency": "1120.591803306667",
+     "ttft": "710.0046091121217",
+     "ttft_prefill_only": "357.99999999999994",
+     "ttft_kv_transfer": "1.1710886400000398",
+     "ttft_decode_first_token": "350.83352047212173",
+     "tpot": "929.6554493866604",
+     "tpot_computation": "926.9276157866608",
+     "tpot_transfer": "2.7278335999995074",
+     "transfer_kv_cache": "1.1710886400000398",
+     "transfer_kv_cache_request_start_ts": "726.2006028727479",
+     "transfer_kv_cache_request_end_ts": "727.3716915127479",
+     "transfer_m2n_total": "5.455667199999015",
+     "transfer_m2n_attn_to_ffn": "2.7278335999996184",
+     "transfer_m2n_ffn_to_attn": "2.7278335999993963",
+     "cluster_prefill_computation": "358.0",
+     "cluster_decode_attn_computation": "832.0000000000007",
+     "cluster_decode_ffn_computation": "640.0000000000003",
+     "cluster_decode_computation": "0.0",
+     "cluster_decode_attn_e2e_time": "832.0000000000007",
+     "cluster_decode_ffn_e2e_time": "639.9999999999948",
+     "request_inter_arrival_delay": "0.0025258618567011344",
+     "request_num_tokens": "35",
+     "request_num_prefill_tokens": "32",
+     "request_num_decode_tokens": "3",
+     "request_pd_ratio": "10.666666666666666",
+     "request_num_restarts": "0",
+     "request_thinking_round_count": "0",
+     "request_session_id": "",
+     "request_cohort": "",
+     "request_sj2q_pen_qshort_entries_total": "0",
+     "request_sj2q_pen_qshort_long_history_entries_total": "0",
+     "request_sj2q_pen_qlong_entries_total": "0",
+     "request_sj2q_pen_long_history_to_qshort_reentry_count": "0",
+     "request_sj2q_pen_first_long_history_round_number": "0",
+     "request_total_preemption_count": "0",
+     "request_prefill_preemption_count": "0",
+     "request_decode_preemption_count": "0",
+     "request_decode_attn_preemption_count": "0",
+     "request_hidden_preemption_count": "0",
+     "request_final_preemption_count": "0",
+     "request_decode_tokens_at_preemption_all": "",
+     "request_decode_attn_tokens_at_preemption_all": "",
+     "request_decode_tokens_at_preemption_mean": "0",
+     "request_decode_tokens_at_preemption_max": "0",
+     "request_decode_tokens_at_preemption_min": "0",
+     "request_spec_total_iterations": "0",
+     "request_spec_accepted_drafts": "0",
+     "request_spec_rejected_drafts": "0",
+     "request_spec_committed_tokens": "0",
+     "request_spec_acceptance_ratio": "0.0",
+     "request_spec_committed_per_iteration": "0.0"
+    }
+   ]
+  },
+  "system_metrics.json": {
+   "kind": "json",
+   "value": {
+    "simulation_metadata": {
+     "total_requests": 4,
+     "completed_requests": 4,
+     "system_architecture": "pd-af-disaggregation",
+     "prefill_server_count": 1,
+     "decode_attn_server_count": 1,
+     "decode_ffn_server_count": 1
+    },
+    "quantization_config": {
+     "config_path": "model_config",
+     "default_precision": "FP16",
+     "custom_operation_count": 0,
+     "config_hash": "edca427a729723234df17c0780e6f364c2bbe6c9a68ea091a5bd836e5439f88d"
+    },
+    "ttft_statistics": {
+     "count": 4,
+     "mean": 624.0704479226292,
+     "median": 711.2675400404722,
+     "std": 153.6293236316079,
+     "min": 358.0,
+     "max": 715.7467116095725,
+     "p50": 711.2675400404722,
+     "p90": 714.7818394173476,
+     "p95": 715.26427551346,
+     "p99": 715.65022439035,
+     "unit": "ms"
+    },
+    "tpot_statistics": {
+     "count": 4,
+     "mean": 882.0655624533288,
+     "median": 929.6554493866604,
+     "std": 82.4281020949888,
+     "min": 739.2959016533334,
+     "max": 929.6554493866604,
+     "p50": 929.6554493866604,
+     "p90": 929.6554493866604,
+     "p95": 929.6554493866604,
+     "p99": 929.6554493866604,
+     "unit": "ms",
+     "note": "TPOT is only computed for requests with num_decode_tokens > 1. Computed from 4 out of 4 requests."
+    },
+    "request_e2e_time_statistics": {
+     "count": 4,
+     "mean": 2388.2015728292868,
+     "median": 2570.578438813793,
+     "std": 318.4785507238883,
+     "min": 1836.591803306667,
+     "max": 2575.0576103828935,
+     "p50": 2570.578438813793,
+     "p90": 2574.0927381906686,
+     "p95": 2574.575174286781,
+     "p99": 2574.961123163671,
+     "unit": "ms"
+    },
+    "throughput_metrics": {
+     "total_duration_ms": 2575.310898773321,
+     "total_duration_seconds": 2.5753108987733206,
+     "requests_per_second": 1.5532105276707722,
+     "total_tokens_processed": 140,
+     "total_decode_tokens_generated": 12,
+     "tokens_per_second": 54.36236846847703,
+     "decode_tokens_per_second": 4.659631583012317
+    },
+    "spec_decode_statistics": {
+     "total_iterations": 0,
+     "total_accepted_drafts": 0,
+     "total_rejected_drafts": 0,
+     "total_committed_tokens": 0,
+     "acceptance_ratio": 0.0,
+     "avg_committed_tokens_per_iteration": 0.0
+    },
+    "kv_cache_transfer_statistics": {
+     "total_transfers": 4,
+     "total_data_transferred_bytes": 67108864,
+     "total_transfer_time_ms": 4.684354560000104,
+     "transfer_time_stats": {
+      "count": 4,
+      "mean": 1.171088640000026,
+      "median": 1.1710886400000398,
+      "std": 2.4037289973451975e-14,
+      "min": 1.1710886399999842,
+      "max": 1.1710886400000398,
+      "p50": 1.1710886400000398,
+      "p90": 1.1710886400000398,
+      "p95": 1.1710886400000398,
+      "p99": 1.1710886400000398,
+      "unit": "ms"
+     }
+    },
+    "kv_cache_transfer_total_bytes": 67108864,
+    "m2n_transfer_statistics": {
+     "total_transfers": 192,
+     "total_data_transferred_bytes": 4194304,
+     "total_transfer_time_ms": 8.139810133332093,
+     "attn_to_ffn_transfers": 96,
+     "ffn_to_attn_transfers": 96,
+     "transfer_time_stats": {
+      "count": 192,
+      "mean": 0.04239484444443798,
+      "median": 0.04248586666655285,
+      "std": 0.00034057397015301244,
+      "min": 0.04193973333332934,
+      "max": 0.04275893333338665,
+      "p50": 0.04248586666655285,
+      "p90": 0.04275893333338665,
+      "p95": 0.04275893333338665,
+      "p99": 0.04275893333338665,
+      "unit": "ms"
+     }
+    },
+    "m2n_transfer_total_bytes": 4194304,
+    "preemption_statistics": {
+     "total_preemption_events": 0,
+     "total_preempted_requests": 0,
+     "preemption_rate": 0.0,
+     "by_cluster_type": {}
+    },
+    "model_weight_memory": {
+     "PREFILL": {
+      "total_parameters": 6476005376,
+      "total_memory_bytes": 12952010752,
+      "total_memory_gb": 12.0625,
+      "memory_utilization_percent": 15.078125,
+      "breakdown": {
+       "attention_parameters": 2147483648,
+       "attention_memory_bytes": 4294967296,
+       "attention_memory_gb": 4.0,
+       "ffn_parameters": 4328521728,
+       "ffn_memory_bytes": 8657043456,
+       "ffn_memory_gb": 8.0625
+      },
+      "device_info": {
+       "device_type": "A800",
+       "total_device_memory_gb": 80.0,
+       "num_replicas": 1,
+       "expert_parallel_size": 1,
+       "moe_tensor_parallel_size": 1
+      }
+     },
+     "DECODE_ATTN": {
+      "total_parameters": 2147483648,
+      "total_memory_bytes": 4294967296,
+      "total_memory_gb": 4.0,
+      "memory_utilization_percent": 5.0,
+      "breakdown": {
+       "attention_parameters": 2147483648,
+       "attention_memory_bytes": 4294967296,
+       "attention_memory_gb": 4.0,
+       "ffn_parameters": 0,
+       "ffn_memory_bytes": 0,
+       "ffn_memory_gb": 0.0
+      },
+      "device_info": {
+       "device_type": "A800",
+       "total_device_memory_gb": 80.0,
+       "num_replicas": 1,
+       "expert_parallel_size": 0,
+       "moe_tensor_parallel_size": 0
+      }
+     },
+     "DECODE_FFN": {
+      "total_parameters": 4328521728,
+      "total_memory_bytes": 8657043456,
+      "total_memory_gb": 8.0625,
+      "memory_utilization_percent": 10.078125,
+      "breakdown": {
+       "attention_parameters": 0,
+       "attention_memory_bytes": 0,
+       "attention_memory_gb": 0.0,
+       "ffn_parameters": 4328521728,
+       "ffn_memory_bytes": 8657043456,
+       "ffn_memory_gb": 8.0625
+      },
+      "device_info": {
+       "device_type": "A800",
+       "total_device_memory_gb": 80.0,
+       "num_replicas": 1,
+       "expert_parallel_size": 1,
+       "moe_tensor_parallel_size": 1
+      }
+     }
+    },
+    "memory_utilization_percent": {
+     "PREFILL": 15.078125,
+     "DECODE_ATTN": 5.0,
+     "DECODE_FFN": 10.078125
+    },
+    "system_architecture_info": {
+     "system_architecture": "pd-af-disaggregation",
+     "cluster_configurations": {
+      "PREFILL": {
+       "num_replicas": 1,
+       "parallel_parameters": {
+        "PP": 1,
+        "ATTN_TP": 1,
+        "MOE_TP": 1,
+        "MOE_EP": 1
+       },
+       "device_type": "A800",
+       "model_name": "llama2_7b_dense_example"
+      },
+      "DECODE_ATTN": {
+       "num_replicas": 1,
+       "parallel_parameters": {
+        "PP": 1,
+        "ATTN_TP": 1
+       },
+       "device_type": "A800",
+       "model_name": "llama2_7b_dense_example"
+      },
+      "DECODE_FFN": {
+       "num_replicas": 1,
+       "parallel_parameters": {
+        "PP": 1,
+        "MOE_TP": 1,
+        "MOE_EP": 1
+       },
+       "device_type": "A800",
+       "model_name": "llama2_7b_dense_example"
+      }
+     }
+    }
+   }
+  }
+ }
+}

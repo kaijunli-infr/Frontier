@@ -15,6 +15,37 @@ import subprocess
 import sys
 
 
+BASE_SETTINGS = {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "WANDB_DISABLED": "true", "VIDUR_DISABLE_WANDB": "1",
+    "OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1",
+    "ENABLE_DUMMY_MODE": "true", "DUMMY_EXEC_TIME_MS": "1",
+    "NUM_REQUESTS": "1", "PREFILL_TOKENS": "16", "DECODE_TOKENS": "4",
+    "QPS": "1", "DECODE_CUDA_GRAPH_MODE": "none",
+    "ENABLE_CHUNKED_PREFILL": "true", "LONG_PREFILL_TOKEN_THRESHOLD": "64",
+    "RUN_ID": "review",
+}
+
+
+def case_invocation(case, root, run_dir):
+    """Return (command, environment overrides) that run ``case`` from ``root``.
+
+    Metrics land under ``run_dir/metrics`` and the predictor cache under
+    ``run_dir/cache`` so concurrent cases never share files.
+    """
+    settings = {
+        **BASE_SETTINGS,
+        "PYTHON_BIN": sys.executable,
+        "PYTHONPATH": str(root),
+        "TMPDIR": str(run_dir.parent),
+        "METRICS_OUTPUT_DIR": str(run_dir / "metrics"),
+        **case["settings"],
+    }
+    command = ["bash", str(root / case["script"]), "--",
+               "--metrics_config_cache_dir", str(run_dir / "cache"), *case["flags"]]
+    return command, settings
+
+
 def scenarios():
     cases = []
 
@@ -103,19 +134,7 @@ def run_case(case, roots, output):
         for label, root in roots.items():
             run_dir = output / case["id"] / label
             run_dir.mkdir(parents=True)
-            settings = {
-                "PYTHON_BIN": sys.executable, "PYTHONDONTWRITEBYTECODE": "1",
-                "PYTHONPATH": str(root), "WANDB_DISABLED": "true", "VIDUR_DISABLE_WANDB": "1",
-                "TMPDIR": str(output), "OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1",
-                "ENABLE_DUMMY_MODE": "true", "DUMMY_EXEC_TIME_MS": "1",
-                "NUM_REQUESTS": "1", "PREFILL_TOKENS": "16", "DECODE_TOKENS": "4",
-                "QPS": "1", "DECODE_CUDA_GRAPH_MODE": "none",
-                "ENABLE_CHUNKED_PREFILL": "true", "LONG_PREFILL_TOKEN_THRESHOLD": "64",
-                "METRICS_OUTPUT_DIR": str(run_dir / "metrics"), "RUN_ID": "review",
-                **case["settings"],
-            }
-            command = ["bash", str(root / case["script"]), "--",
-                       "--metrics_config_cache_dir", str(run_dir / "cache"), *case["flags"]]
+            command, settings = case_invocation(case, root, run_dir)
             (run_dir / "invocation.json").write_text(json.dumps({
                 "cwd": str(root), "command": command, "environment_overrides": settings,
             }, indent=2) + "\n")

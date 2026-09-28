@@ -187,6 +187,8 @@ tests/**/*.json
 tests/**/*.csv
 tests/**/*.png
 tests/**/*.txt
+# Checked-in golden matrix digests are the refactor safety net.
+!tests/golden_matrix/goldens/*.json
 
 
 tests/training/test_output/
